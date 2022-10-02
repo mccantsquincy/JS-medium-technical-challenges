@@ -1,5 +1,5 @@
 // 1. Falsy or Truthy
-// given two values, return the first one if it is falsy, otherwise reurn the second one.
+// given two values, return the first one if it is falsy, otherwise return the second one.
 
 // function filterOutFalsy(num1, num2) {
 //     return !num1 ? num1 : num2;
@@ -47,11 +47,11 @@ console.log(filterOutFalsy(true, 'Dog'))
 
 // console.log(arrLength([5,0,-4,1]));
 
-function arrLength(arr) {
-    return arr.Length;
-}
+// function arrLength(arr) {
+//     return arr.Length;
+// }
 
-console.log(arrLength([]));
+// console.log(arrLength([]));
 
 // 3. Get the last element in a array
 
@@ -67,11 +67,11 @@ console.log(arrLength([]));
 
 // console.log(lastElem(['dog', 'cat', 'ball']));
 
-function lastElem(arr) {
-    return arr[arr.length - 1];
-}
+// function lastElem(arr) {
+//     return arr[arr.length - 1];
+// }
 
-console.log(lastElem([null, 5, false]));
+// console.log(lastElem([null, 5, false]));
 
 // 4. Find the sum of an array
 
@@ -244,17 +244,17 @@ console.log(calcTime(66))
 
 // console.log(getMax([12, 10, -20]));
 
-function getMax(arr) {
-    let max = arr[0];
-    for( let i = 0; i < arr.length; ++i) {
-        if( arr[i] > max) {
-            max = arr[i];
-        }
-    }
-    return max;
-}
+// function getMax(arr) {
+//     let max = arr[0];
+//     for( let i = 0; i < arr.length; ++i) {
+//         if( arr[i] > max) {
+//             max = arr[i];
+//         }
+//     }
+//     return max;
+// }
 
-console.log(getMax([-300, -100, -200]));
+// console.log(getMax([-300, -100, -200]));
 
 // 8. reverse the string
 // reverseString('abc')
@@ -365,8 +365,96 @@ console.log(reverseString('This is cool'))
 
 // console.log(convertToZeros([20, 30, 40]))
 
-function convertToZeros(arr) {
-    return arr.map(elem => 0);
+// function convertToZeros(arr) {
+//     return arr.map(elem => 0);
+// }
+
+// console.log(convertToZeros([20, 30, 40]))
+
+//  10. Filter out all the apples
+// removeApples(['Banana', 'Apple', 'Orange', 'Apple'])
+// removeApples(['Tomato', 'Orange', 'Banana'])
+// removeApples(['Banana', 'Orange', 'Apple'])
+
+// function removeApples(arr) {
+//     let noApples = []
+//     for(let i = 0; i < arr.length; ++i) {
+//        if(arr[i] !== 'Apple') {
+//         noApples.push(arr[i]);
+//        }
+//     }
+//     return noApples;
+// }
+
+//  console.log(removeApples(['Banana', 'Apple', 'Orange', 'Apple']));
+
+// function removeApples(arr) {
+//     let noApples = []
+//     for(let i = 0; i < arr.length; ++i) {
+//         if(arr[i] !== 'Apple') {
+//             noApples.push(arr[i])
+//         }
+//     }
+//     return noApples;
+// }
+
+// console.log(removeApples(['Banana', 'Orange', 'Apple']));
+
+// Filter Method 
+// function removeApples(arr) {
+//   return arr.filter(elem => elem !== 'Apple')
+// }
+
+// console.log(removeApples(['Banana', 'Orange', 'Apple']));
+
+// function removeApples(arr) {
+//     return arr.filter(elem => elem !== 'Apple')
+// }
+
+// console.log(removeApples(['Apple', 'Pear', 'Mango']))
+
+// 11. Filter out all the falsy values
+
+// function filterOutFalse(arr) {
+//     return arr.filter(elem => !!elem === true)
+// }
+
+// console.log(filterOutFalse(["", 0, null, undefined, false, "0", [] ]));
+
+// for loop method (on my own)
+// function filterOutFalse(arr) {
+//     let noFalsy = [];
+//     for ( let i = 0; i < arr.length; ++i) {
+//         if(!!arr[i] === true) {
+//             noFalsy.push(arr[i])
+//         }
+//     }
+
+//     return noFalsy
+// }
+
+// console.log(filterOutFalse(["", 0, null, undefined, false, "0", [] ]));
+
+// filter method (on my own)
+function filterOutFalse(arr) {
+    return arr.filter(elem => !!elem === true)
 }
 
-console.log(convertToZeros([20, 30, 40]))
+console.log(filterOutFalse(["", 0, null, undefined, false, "0", [] ]));
+
+// 12 truthy to true, Falsy to false
+// given an array of truthy and falsy values, return the same array of elemens into its boolean value
+// if you ever have to convert something in an array use .map(elem => elem)
+// to check something is true or not use !!. you can alse check using google console. example you can !!"", !!0, !!"0", !![] and it will tell you if it is true or false. top tech method.
+
+// function convertToBoolean(arr) {
+//     return arr.map(elem => !!elem)
+// }
+
+// console.log(convertToBoolean([500, 0, "David", "", []]))
+
+function convertToBoolean(arr) {
+  return arr.map(elem => !!elem);
+}
+
+console.log(convertToBoolean([1,'string', "", null]));
